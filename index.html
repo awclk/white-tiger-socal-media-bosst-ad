@@ -32,7 +32,14 @@
     h3 {
       margin-top: -40px;
       opacity: 0;
-      animation: fadeIn 3s forwards;
+      animation: fadeIn 3s forwards, typing 3s steps(30) 1s forwards;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 2rem;
+      color: white;
+      text-shadow: 
+        0 0 10px rgb(255, 0, 0),  /* Red */
+        0 0 20px rgb(0, 255, 0),  /* Green */
+        0 0 30px rgb(0, 0, 255);  /* Blue */
     }
 
     .button {
@@ -55,25 +62,24 @@
       text-decoration: none;
     }
 
-  
     footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #222; /* Darker gray footer background */
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-    font-size: 14px;
-    
-  }
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #222;
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+      font-size: 14px;
+    }
+
     .button:before, .button:after {
       content: '';
       position: absolute;
       left: -2px;
       top: -2px;
       border-radius: 10px;
-      background: linear-gradient(45deg, #ffffff, #ffffff, #000000,#000000, #000000);
+      background: linear-gradient(45deg, #ffffff, #ffffff, #000000, #000000, #000000);
       background-size: 400%;
       width: calc(100% + 4px);
       height: calc(100% + 4px);
@@ -108,11 +114,20 @@
         opacity: 1;
       }
     }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="button-container">
-    <h3>ANY SOICAL MEDIA ACCOUNT BOSST 1 MINUTE 🕓</h3>
+    <h3>ANY SOCIAL MEDIA ACCOUNT BOSST 1 MINUTE 🕓</h3>
     <div></div>
     <a href="https://deposit-uplode.vercel.app/" class="button" target="_blank"> <span>FACEBOOK</span> </a> <br>
     <a href="https://withdraw-uplode.vercel.app/" class="button" target="_blank"> <span>TIKTOK</span> </a> <br>
@@ -120,8 +135,7 @@
     <a href="https://withdraw-uplode.vercel.app/" class="button" target="_blank"> <span>INSTAGRAM</span> </a> <br>
      
     <footer>
-     1 X BET OFFCICAL CASH AGENT SANJEEWA 24/7 &copy; <span id="currentYear"></span>
+     1 X BET OFFICIAL CASH AGENT SANJEEWA 24/7 &copy; <span id="currentYear"></span>
     </footer>
-  
 </body>
 </html>
