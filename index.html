@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="" type="image/x-icon">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      color: white;
+      background-color: black;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    /* Canvas for the Matrix effect */
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .button-container {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      z-index: 1;
+    }
+
+    h3 {
+      margin-top: -40px;
+      opacity: 0;
+      animation: fadeIn 3s forwards;
+    }
+
+    .button {
+      width: 140px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0px 15px;
+      background-color: red;
+      border-radius: 10px;
+      border: none;
+      color: white;
+      position: relative;
+      cursor: pointer;
+      font-weight: 900;
+      transition-duration: .2s;
+      background: linear-gradient(0deg, #000, #272727);
+      text-decoration: none;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #222;
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Canvas for matrix effect -->
+  <canvas id="matrixCanvas"></canvas>
+
+  <div class="button-container">
+    <h3>ANY SOCIAL MEDIA ACCOUNT BOOST 1 MINUTE 🕓</h3>
+    <div></div>
+    <a href="https://deposit-uplode.vercel.app/" class="button" target="_blank"> <span>FACEBOOK</span> </a> <br>
+    <a href="https://withdraw-uplode.vercel.app/" class="button" target="_blank"> <span>TIKTOK</span> </a> <br>
+    <a href="https://deposit-uplode.vercel.app/" class="button" target="_blank"> <span>YOUTUBE</span> </a> <br>
+    <a href="https://withdraw-uplode.vercel.app/" class="button" target="_blank"> <span>INSTAGRAM</span> </a> <br>
+     
+    <footer>
+      1 X BET OFFICIAL CASH AGENT SANJEEWA 24/7 &copy; <span id="currentYear"></span>
+    </footer>
+  </div>
+
+  <script>
+    // Set up the matrix effect
+    const canvas = document.getElementById('matrixCanvas');
+    const ctx = canvas.getContext('2d');
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+
+    const columns = canvas.width / 20;  // Number of columns for the matrix
+    const drops = Array(columns).fill(1); // Starting drop positions
+
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    const charArray = characters.split('');
+
+    function drawMatrix() {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)'; // Fading effect for trailing characters
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = '#ff0000'; // Red color for matrix
+      ctx.font = '20px monospace';
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = charArray[Math.floor(Math.random() * charArray.length)];
+        ctx.fillText(text, i * 20, drops[i] * 20);
+
+        if (drops[i] * 20 > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+
+    // Redraw matrix effect every 33ms for smooth animation
+    setInterval(drawMatrix, 33);
+  </script>
+</body>
+</html>
