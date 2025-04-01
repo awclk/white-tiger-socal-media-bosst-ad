@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTok Package And Price List</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('https://i.ibb.co/7kDGxN8/b176a1030dfaffbb3a1e14e9335d0af6.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        @keyframes rgb-animation {
+            0% {
+                text-shadow: 0 0 5px red, 0 0 10px red, 0 0 15px blue, 0 0 20px green, 0 0 25px red, 0 0 30px blue, 0 0 35px green;
+            }
+            14% {
+                text-shadow: 0 0 5px blue, 0 0 10px blue, 0 0 15px green, 0 0 20px red, 0 0 25px blue, 0 0 30px green, 0 0 35px red;
+            }
+            28% {
+                text-shadow: 0 0 5px green, 0 0 10px green, 0 0 15px red, 0 0 20px blue, 0 0 25px green, 0 0 30px red, 0 0 35px blue;
+            }
+            42% {
+                text-shadow: 0 0 5px red, 0 0 10px red, 0 0 15px blue, 0 0 20px green, 0 0 25px red, 0 0 30px blue, 0 0 35px green;
+            }
+            57% {
+                text-shadow: 0 0 5px blue, 0 0 10px blue, 0 0 15px green, 0 0 20px red, 0 0 25px blue, 0 0 30px green, 0 0 35px red;
+            }
+            71% {
+                text-shadow: 0 0 5px green, 0 0 10px green, 0 0 15px red, 0 0 20px blue, 0 0 25px green, 0 0 30px red, 0 0 35px blue;
+            }
+            100% {
+                text-shadow: 0 0 5px red, 0 0 10px red, 0 0 15px blue, 0 0 20px green, 0 0 25px red, 0 0 30px blue, 0 0 35px green;
+            }
+        }
+
+        h1 {
+            color: white;
+            margin: 40px 0 10px;
+            text-align: center;
+            animation: rgb-animation 4s infinite alternate;
+            text-shadow: 0 0 10px #FF0000, 0 0 20px #FF6347;
+        }
+
+        .app-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .app {
+            opacity: 0;
+            text-align: center;
+            background: #FFFFFF;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 350px;
+            width: 100%;
+            transform: translateY(30px);
+            transition: transform 0.6s ease, opacity 0.6s ease, box-shadow 0.6s ease;
+        }
+
+        .app.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .app img {
+            max-width: 100%;
+            border-radius: 15px;
+            height: auto;
+        }
+
+        p {
+            color: black;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .download-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+            margin-top: 20px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background-color: #218838;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+        .modal-title {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .close {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: black;
+        }
+
+        .modal-button {
+            background-color: #ff0000;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .modal-button:hover {
+            background-color: #cc0000;
+        }
+
+        .cancel-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-left: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cancel-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>♪ Tiktok Package And Price List ♪</h1>
+
+    <div class="app-container">
+        <!-- First Application -->
+        <div class="app">
+            <img src="https://pomf2.lain.la/f/2szov3a.jpg" alt="Application 1 Image">
+            <p>🔢 82898025</p>
+            <p>👤 S.A.K.SANJEEWA</p>
+            <p>🌎 SUURIYAWEWA</p>
+        </div>
+
+        <!-- Second Application -->
+        <div class="app">
+            <img src="https://pomf2.lain.la/f/0jn35fl5.png" alt="Application 2 Image">
+            <p>🔢 001021130257</p>
+            <p>👤 S.A.K.SANJEEWA</p>
+            <p>🌎 HEAD OFFICE</p>
+        </div>
+
+        <!-- Third Application -->
+        <div class="app">
+            <img src="https://pomf2.lain.la/f/0346pg4d.jpg" alt="Application 3 Image">
+            <p>🔢 03410008893</p>
+            <p>👤 S.A.K.SANJEEWA</p>
+            <p>🌎 VAUNIYA</p>
+        </div>
+
+        <!-- 4th Application -->
+        <div class="app">
+            <img src="https://pomf2.lain.la/f/vjlx8ico.jpeg" alt="Application 2 Image">
+            <p>🔢 8018441471</p>
+            <p>👤 S.A.K.SANJEEWA</p>
+            <p>🌎 VAUNIYA</p>
+        </div>
+
+        <!-- 5th Application -->
+        <div class="app">
+            <img src="https://pomf2.lain.la/f/nmehw2jh.png" alt="Application 2 Image">
+            <p>🔢 032020759703</p>
+            <p>👤 S.A.K.SANJEEWA</p>
+            <p>🌎 VAUNIYA</p>
+        </div>
+            
+        <!-- 6th Application -->
+        <div class="app">
+            <img src="https://pomf2.lain.la/f/yhuo2an5.png" alt="Application 2 Image">
+            <p>🔢 300100164317</p>
+            <p>👤 S.A.K.SANJEEWA</p>
+            <p>🌎 VAUNIYA</p>
+        </div>
+
+        <!-- 7th Application -->
+        <div class="app">
+            <img src="https://pomf2.lain.la/f/u0dakznj.jpg" alt="Application 2 Image">
+            <p>🔢 0770879274</p>
+            <p>👤 S.A.K.SANJEEWA</p>
+        </div>
+
+        <!-- 8th Application -->
+        <div class="app">
+            <img src="https://pomf2.lain.la/f/eclq3imw.jpeg" alt="Application 2 Image">
+            <p>🔢 0770879274</p>
+            <p>👤 S.A.K.SANJEEWA</p>
+        </div>
+    </div>
+     
+    <!-- Modal for tutorial video -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title">📲 ඔබට මෙම පැකේජය මිලදි ගැනීමට සහ උපකාරය ලබාගැනීමට ටෙලිගැරැම් හරහා සම්බන්ධ කරනු ඇත. 😊💗</span>
+                <span class="close" data-modal="modal1">&times;</span>
+            </div>
+            <a href="https://t.me/whitetigermindinclk" class="download-btn" data-modal="modal3">BUY KEY</a>
+        </div>
+    </div>
+
+    <script>
+        function handleScrollAnimation() {
+            const appCards = document.querySelectorAll('.app');
+            const windowHeight = window.innerHeight;
+
+            appCards.forEach((card, index) => {
+                const cardPosition = card.getBoundingClientRect().top;
+
+                if (cardPosition < windowHeight - 100) {
+                    setTimeout(() => {
+                        card.classList.add('visible');
+                    }, 100 * index);
+                }
+            });
+        }
+
+        window.addEventListener('scroll', handleScrollAnimation);
+        window.addEventListener('load', handleScrollAnimation);
+
+        const modals = document.querySelectorAll('.modal');
+        const downloadButtons = document.querySelectorAll('.download-btn');
+
+        downloadButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const modalId = button.getAttribute('data-modal');
+                const modal = document.getElementById(modalId);
+                modal.style.display = 'block';
+            });
+        });
+
+        const closes = document.querySelectorAll('.close');
+
+        closes.forEach(close => {
+            close.addEventListener('click', () => {
+                const modalId = close.getAttribute('data-modal');
+                const modal = document.getElementById(modalId);
+                modal.style.display = 'none';
+            });
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
