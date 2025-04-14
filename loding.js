@@ -1,28 +1,30 @@
-// Function to load content from home.html dynamically
+// Function to simulate loading and fetch home.html content
 function loadContent() {
-    // Simulate a loading delay (e.g., fetching home.html content)
-    setTimeout(function() {
-        // Hide the loader and show the content
-        document.getElementById('loader').style.display = 'none';
+    // Show the loader while content is being loaded
+    document.getElementById('loader').style.display = 'block';
 
-        // Create an XMLHttpRequest to load home.html
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'dashbord.html', true);
-
-        // On successful load, insert the content into the div
-        xhr.onload = function() {
-            if (xhr.status === 200) {
-                document.getElementById('content').innerHTML = xhr.responseText;
-                document.getElementById('content').style.display = 'block';
+    // Use fetch to load home.html dynamically
+    fetch('dashbord.html')
+        .then(response => {
+            if (response.ok) {
+                return response.text(); // Return the content as text
             } else {
-                document.getElementById('content').innerHTML = 'Error loading content';
-                document.getElementById('content').style.display = 'block';
+                throw new Error('Failed to load content');
             }
-        };
-
-        xhr.send();
-    }, 3000); // 3 seconds delay before loading content
+        })
+        .then(content => {
+            // Once content is loaded, inject it into the page
+            document.getElementById('content').innerHTML = content;
+            document.getElementById('content').style.display = 'block'; // Show the content
+            document.getElementById('loader').style.display = 'none'; // Hide the loader
+        })
+        .catch(error => {
+            // Handle error if loading fails
+            document.getElementById('content').innerHTML = 'Error loading content.';
+            document.getElementById('content').style.display = 'block'; // Show the error message
+            document.getElementById('loader').style.display = 'none'; // Hide the loader
+        });
 }
 
-// Call the function to load content
-loadContent();
+// Call loadContent function when the page is ready
+window.onload = loadContent;
