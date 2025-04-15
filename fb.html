@@ -104,6 +104,31 @@
             background-color: #218838;
         }
 
+        button {
+    background-color: #28a745;
+    color: white;
+    padding: 16px 32px; /* Increase padding for a bigger button */
+    text-decoration: none;
+    font-size: 20px; /* Slightly larger font size */
+    font-weight: bold; /* Make the text bold for better visibility */
+    border-radius: 8px; /* Smooth rounded corners */
+    margin-top: 20px;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: none; /* Remove border */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add a soft shadow for depth */
+}
+
+button:hover {
+    background-color: #218838;
+    transform: translateY(-3px); /* Add slight hover effect */
+}
+
+button:active {
+    transform: translateY(0); /* Reset when clicked */
+}
+
         .modal {
             display: none;
             position: fixed;
